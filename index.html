@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SWCU服务器地图管理</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/common.css">
+        <script src="scripts/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#maplist").load("ajax_map_list.php?random=" + Math.random());
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <span id="title">地图管理</span>
+            <a href="map_save.html"><span class="navitem">添加地图</span></a>
+        </header>
+        <content>
+            <div>
+                <table class="datagrid area">
+                    <thead>
+                        <tr>
+                          <th class="gridtitlelong">地图名称</th>
+                          <th class="gridtitle">自动加载</th>
+                          <th class="gridtitle">已载入</th>
+                          <th class="gridtitle">删除</th>
+                        </tr>
+                    </thead>
+                    <tbody id="maplist">
+                    </tbody>
+                </table>
+            </div>
+        </content>
+    </body>
+</html>

@@ -14,11 +14,13 @@
     margin: 0;
     padding: 0;
     border: 0;
+    border-image-width: 0;
 }
 
 *:link, *:visited
 {
     color: #336699;
+    text-decoration: none;
 }
 
 body
@@ -33,27 +35,32 @@ body
 {
     font-family: "entypo";
     width: 24px;
-    height: 24px;
     display: inline-block;
     font-size: 24px;
+    line-height: 24px;
+    padding: 16px;
 }
 
 header
 {
     width: 100%;
     background-color: #FFFFFF;
+    padding: 0 16px;
+    height: 58px;
 }
 
-header p
+#title
 {
-    padding: 16px;
+    padding:     16px;
     font-size: 24px;
     color: #336699;
+    line-height: 24px;
+    display: inline-block;
 }
 
 .area
 {
-    background: rgba(255, 255, 255, 0.1); 
+    background: rgba(255, 255, 255, 0.1);
     margin: 16px;
 }
 
@@ -62,7 +69,7 @@ header p
     padding: 8px;
     font-size: 16px;
     margin: 8px;
-    height: 20px;
+    line-height: 20px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -107,4 +114,43 @@ header p
 #console *, #console *:link, #console *:visited
 {
     color: white;
+}
+
+.navitem
+{
+    font-size: 16px;
+    padding: 16px;
+    display: inline-block;
+    line-height: 24px;
+}
+
+.datagrid *
+{
+    padding: 8px;
+    color: #336699;
+}
+
+.datagrid tr:nth-child(odd)
+{
+    background: rgba(240, 240, 240, 0.9);
+}
+
+.datagrid tr:nth-child(even)
+{
+    background-color: white;
+}
+
+.gridtitle
+{
+    width: 100px;
+}
+
+.gridtitlelong
+{
+    min-width: 200px;
+}
+
+.griditemname
+{
+    text-align: left;
 }

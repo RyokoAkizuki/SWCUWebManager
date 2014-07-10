@@ -3,17 +3,23 @@
     <head>
         <meta charset="utf-8">
         <title>添加地图</title>
-        <link rel="stylesheet" type="text/css" href="stylesheets/map.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/common.css">
         <script src="scripts/jquery.min.js"></script>
         <script src="scripts/alajax-1.2.js"></script>
         <script>
             $(document).ready(function(){
                 $("#mapsaveform").alajax({
+                    beforeSend: function (){
+                        $("#mapsavesubmit").prop("disabled", true);
+                        $("#console").append("正在提交</br>");
+                    },
                     success: function(result){
-                        $("#console").html(result);
+                        $("#mapsavesubmit").prop("disabled", false);
+                        $("#console").append(result);
                     },
                     error: function(result){
-                        $("#console").html(result);
+                        $("#mapsavesubmit").prop("disabled", false);
+                        $("#console").append(result);
                     }
                 });
             });
@@ -21,7 +27,8 @@
     </head>
     <body>
         <header>
-            <p><a href="index.html"><span class="icon">&#59237;</span></a><span>保存新地图</span></p>
+            <a href="index.html"><span class="icon">&#59237;</span></a>
+            <span id="title">保存新地图</span>
         </header>
         <form id="mapsaveform" class="area" action="rpc_map_save.php" method="post">
             <table>
