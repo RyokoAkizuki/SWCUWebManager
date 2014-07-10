@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'entypo';
+    src: url('../fonts/entypo.eot');
+    src: url('../fonts/entypo.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/entypo.woff') format('woff'),
+         url('../fonts/entypo.ttf') format('truetype'),
+         url('../fonts/entypo.svg#entypo') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+*:link, *:visited
+{
+    color: #336699;
+}
+
+body
+{
+    background-color: #336699;
+    color: white;
+    font-size: 16px;
+    font-family: "微软雅黑", "Lucida Console";
+}
+
+.icon
+{
+    font-family: "entypo";
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    font-size: 24px;
+}
+
+header
+{
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+header p
+{
+    padding: 16px;
+    font-size: 24px;
+    color: #336699;
+}
+
+.area
+{
+    background: rgba(255, 255, 255, 0.1); 
+    margin: 16px;
+}
+
+.formlabel
+{
+    padding: 8px;
+    font-size: 16px;
+    margin: 8px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.formtitle
+{
+    width: 81px;
+    float: right;
+    text-align: right;
+}
+
+.formcheck
+{
+    width: 20px;
+    height: 20px;
+    margin: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.forminput
+{
+    padding: 8px;
+    font-size: 16px;
+    margin: 8px;
+    width: 700px;
+}
+
+.formbutton
+{
+    font-size: 16px;
+    padding: 8px 32px;
+    margin: 8px;
+}
+
+#console
+{
+    line-height: 20px;
+    padding: 8px;
+}
+
+#console *, #console *:link, #console *:visited
+{
+    color: white;
+}

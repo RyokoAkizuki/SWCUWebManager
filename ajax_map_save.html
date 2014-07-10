@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>添加地图</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/map.css">
+        <script src="scripts/jquery.min.js"></script>
+        <script src="scripts/alajax-1.2.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#mapsaveform").alajax({
+                    success: function(result){
+                        $("#console").html(result);
+                    },
+                    error: function(result){
+                        $("#console").html(result);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <p><a href="index.html"><span class="icon">&#59237;</span></a><span>保存新地图</span></p>
+        </header>
+        <form id="mapsaveform" class="area" action="rpc_map_save.php" method="post">
+            <table>
+                <tr>
+                    <td><label class="formtitle formlabel" for="mapname">地图名称</label></td>
+                    <td><input class="forminput" type="text" name="mapname" id="mapname"/></td>
+                </tr>
+                <tr>
+                    <td><label class="formtitle formlabel" for="mapcode">地图代码</label></td>
+                    <td><textarea class="forminput" rows="20" name="mapcode" id="mapcode"></textarea></td>
+                </tr>
+                <tr>
+                    <td><input class="formtitle formcheck" type="checkbox" name='loadnow' value='1' id="loadnow" checked="checked"/></td>
+                    <td><label class="formlabel" for="loadnow">立即在服务器上加载</label></td>
+                </tr>
+                <tr>
+                    <td><input class="formtitle formcheck" type="checkbox" name='autoload' value='1' id="autoload" checked="checked"/></td>
+                    <td><label class="formlabel" for="autoload">下次启动服务器时自动加载</label></td>
+                </tr>
+                <tr>
+                    <td><label class="formtitle formlabel">准备好了?</label></td>
+                    <td><input class="formbutton" id="mapsavesubmit" type="submit" value="提交" /></td>
+                </tr>
+            </table>
+        </form>
+        <div id="console" class="area"></div>
+    </body>
+</html> 
