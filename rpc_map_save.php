@@ -18,7 +18,31 @@
 
 require_once("rpc.php");
 
-$saved = (bool)xmlrpc_decode(mapSave($_POST["mapname"], $_POST["mapcode"], isset($_POST["autoload"])));
+$xml = simplexml_load_string($_POST["mapcode"]);
+$code = '';
+
+if($xml != FALSE) // parsed as XML
+{
+  foreach($xml->children() as $key => $child)
+  {
+    if($key == 'object')
+    {
+      $code .= 'CreateObject(' . $child['model'] . ',' . $child['posX'] . ',' . $child['posY'] . ',' . 
+        $child['posZ'] . ',' . $child['rotX'] . ',' . $child['rotY'] . ',' . $child['rotZ'] . ');' . "\n";
+    }
+    else if($key == 'vehicle')
+    {
+      $code .= 'CreateVehicle(' . $child['model'] . ',' . $child['posX'] . ',' . $child['posY'] . ',' . 
+        $child['posZ'] . ',' . $child['rotZ'] . ',0,0,-1);' . "\n";
+    }
+  }
+}
+else
+{
+  $code = $_POST["mapcode"];
+}
+
+$saved = (bool)xmlrpc_decode(mapSave($_POST["mapname"], $code, isset($_POST["autoload"])));
 
 if(!$saved)
 {
