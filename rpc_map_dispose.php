@@ -18,6 +18,7 @@
 
 require("rpc.php");
 
+print("mapUnload: " . xmlrpc_decode(mapUnload($_GET["name"])));
 print("mapDispose: " . xmlrpc_decode(mapDispose($_GET["name"])));
 
 ?>
