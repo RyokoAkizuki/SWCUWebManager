@@ -16,7 +16,7 @@
 
 <?php
 
-require("rpc.php");
+require_once("rpc.php");
 
 if($_GET["autoload"] == "true")
 	$autoload = true;

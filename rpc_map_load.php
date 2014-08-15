@@ -16,7 +16,7 @@
 
 <?php
 
-require("rpc.php");
+require_once("rpc.php");
 
 print("mapLoad: " . xmlrpc_decode(mapLoad($_GET["name"])));
 

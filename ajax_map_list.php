@@ -35,6 +35,7 @@ foreach($list->children() as $child)
             ('<a href="rpc_map_unload.php?rand=' . rand() . '&name=' . $child["name"] . '"">卸载</a>') :
             ('<a href="rpc_map_load.php?rand=' . rand() . '&name=' . $child["name"] . '"">加载</a>'))
         . '</th>');
+    echo('<th><a href="map_update.php?rand=' . rand() . '&name='  .$child["name"] . '"">更新</a></th>');
     echo('<th><a href="rpc_map_dispose.php?rand=' . rand() . '&name='  .$child["name"] . '"">删除</a></th></tr>');
 }
 

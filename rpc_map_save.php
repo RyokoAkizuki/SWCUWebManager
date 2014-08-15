@@ -16,7 +16,7 @@
 
 <?php
 
-require("rpc.php");
+require_once("rpc.php");
 
 $saved = (bool)xmlrpc_decode(mapSave($_POST["mapname"], $_POST["mapcode"], isset($_POST["autoload"])));
 

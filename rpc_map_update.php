@@ -16,10 +16,9 @@
 
 <?php
 
-require_once("rpc.php");
+$_GET["name"] = $_POST['mapname'];
 
-print(hello());
+include('rpc_map_dispose.php');
+include('rpc_map_save.php');
 
 ?>
-
-<br/><a href="map_list.php">返回地图列表</a>
